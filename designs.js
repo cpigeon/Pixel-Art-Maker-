@@ -25,6 +25,13 @@ sizePicker.addEventListener('submit', function(event) {
   makeGrid(height, width);
 })
 
+// Event listener for clicks within the grid
+pixelCanvas.addEventListener('click', function(event) {
+  if (event.target.nodeName === "TD") {
+    event.target.style.backgroundColor = color.value;
+  }
+})
+
 function makeGrid(height, width) {
 // Your code goes here!
   for (n = 0; n < height; n++) {
