@@ -9,6 +9,13 @@ const color = document.getElementById('colorPicker');
 const sizePicker = document.getElementById('sizePicker');
 
 // When size is submitted by the user, call makeGrid()
+sizePicker.addEventListener('submit', function(event) {
+  // Prevents the form from re-submitting
+  event.preventDefault();
+  const height = document.getElementById('inputHeight').value;
+  const width = document.getElementById('inputWidth').value;
+  makeGrid(height, width);
+})
 
 function makeGrid(height, width) {
 // Your code goes here!
