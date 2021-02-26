@@ -12,6 +12,14 @@ const sizePicker = document.getElementById('sizePicker');
 sizePicker.addEventListener('submit', function(event) {
   // Prevents the form from re-submitting
   event.preventDefault();
+  // Check if the canvas is already populated with a grid
+  const canvasRows = pixelCanvas.childNodes.length;
+  // If the canvas is already populated with a grid, remove the previous grid
+  if (canvasRows !== 0) {
+    for (i = canvasRows-1; i >= 0; i--) {
+      pixelCanvas.childNodes[i].remove();
+    }
+  }
   const height = document.getElementById('inputHeight').value;
   const width = document.getElementById('inputWidth').value;
   makeGrid(height, width);
